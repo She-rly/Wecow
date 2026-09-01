@@ -1,0 +1,112 @@
+:root{
+  --primary:#0d6efd;
+  --primary-dark:#0b5ed7;
+  --secondary:#1c7ed6;
+  --surface:#ffffff;
+  --surface-strong:#f8f9fa;
+  --bg:#eef4fb;
+  --text:#0f172a;
+  --muted:#6c757d;
+  --shadow:0 24px 80px rgba(13,110,253,0.08);
+}
+
+body{
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+}
+
+a{transition:.2s ease}
+a:hover{color:var(--primary)}
+
+header{background:rgba(255,255,255,.96);backdrop-filter:blur(12px);position:sticky;top:0;z-index:1020;box-shadow:0 1px 18px rgba(15,23,42,.08)}
+
+.navbar-brand{font-weight:700;display:flex;align-items:center;gap:.8rem}
+#logo{height:72px;min-width:72px;width:82px;object-fit:contain;filter:drop-shadow(0 8px 12px rgba(13,110,253,.12));display:block}
+.navbar-brand .ms-2{margin-left:0.35rem!important}
+.nav-link{color:#343a40}
+.nav-link.active,.nav-link:hover{color:var(--primary)}
+.navbar-nav .btn{padding:.6rem 1.15rem}
+
+.hero{
+  padding:5rem 0;
+  background:linear-gradient(135deg,rgba(13,110,253,.95),rgba(49,132,255,.95)),url('../assets/hero-placeholder.svg') no-repeat calc(100% - 5rem) center/contain;
+  color:#ffffff;
+  position:relative;
+}
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at top left,rgba(255,255,255,.12),transparent 38%),radial-gradient(circle at bottom right,rgba(255,255,255,.08),transparent 28%);
+}
+.hero .container{position:relative;z-index:1}
+.hero h1{font-size:clamp(2.75rem,4vw,4.25rem);line-height:1.02;font-weight:800;margin-bottom:1rem}
+.hero h2{font-size:clamp(1.5rem,3vw,2.25rem);line-height:1.1;font-weight:700;margin-bottom:1.5rem;color:rgba(255,255,255,.95)}
+.hero p.lead{font-size:1.2rem;color:rgba(255,255,255,.9);margin-bottom:1.5rem}
+.hero .btn-light{color:var(--primary);background:#ffffff;box-shadow:0 20px 40px rgba(15,23,42,.12);border:none}
+.hero .btn-light:hover{transform:translateY(-1px)}
+
+#about h2::after,#journey h2::after{width:6rem}
+
+#journey .badge{background:var(--primary);font-size:.85rem;padding:.4rem .8rem}
+#journey .card{border:1px solid rgba(13,110,253,.1);transition:all .3s ease}
+#journey .card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(13,110,253,.15)}
+#journey .card-title{color:var(--primary)}
+
+#about{background:#ffffff}
+#about .row>div p{font-size:.95rem;line-height:1.6}
+
+section{padding:5rem 0}
+section#impact,section#partnership,section#journey{padding-top:4rem;padding-bottom:4rem}
+section h2{font-size:2rem;font-weight:700;position:relative;margin-bottom:1rem}
+section h2::after{content:'';display:block;width:4rem;height:.35rem;border-radius:.25rem;background:var(--primary);margin-top:.75rem}
+
+.container{max-width:1140px}
+
+.journey .step{
+  padding:1.35rem 1rem;
+  background:#ffffff;
+  border-radius:18px;
+  margin:.5rem;
+  border:1px solid rgba(13,110,253,.12);
+  flex:1;
+  box-shadow:0 12px 28px rgba(15,23,42,.05);
+  font-weight:600;
+  color:var(--secondary);
+}
+.journey{gap:.75rem}
+
+.bg-light{background:var(--surface-strong)}
+.card{border:0;border-radius:1rem;box-shadow:var(--shadow);overflow:hidden}
+.card p{color:var(--muted)}
+
+#impact .card{background:#ffffff}
+#impact .card .h5{color:var(--primary)}
+
+#services .col-md-4{margin-bottom:1.25rem}
+#services h5{font-weight:700;margin-bottom:.75rem}
+
+#about ul{list-style:none;padding-left:0;margin-top:1.25rem}
+#about ul li{position:relative;padding-left:1.8rem;margin-bottom:.85rem;color:var(--muted)}
+#about ul li::before{content:'✔';position:absolute;left:0;top:0;color:var(--primary)}
+
+#contact{background:#ffffff}
+#contact .form-control{border-radius:.85rem;box-shadow:none;border:1px solid rgba(15,23,42,.12)}
+#contact .form-control:focus{border-color:var(--primary);box-shadow:0 0 0 0.15rem rgba(13,110,253,.12)}
+#contact .btn-primary{border-radius:.85rem;box-shadow:0 18px 40px rgba(13,110,253,.16)}
+
+footer{background:#14213d;color:#e9ecef;padding:1.5rem 0}
+footer small{color:rgba(233,236,239,.72)}
+footer a{color:#e9ecef}
+
+@media(max-width:991px){
+  .hero{background-position:top right}
+}
+@media(max-width:767px){
+  .hero{padding:3.5rem 0}
+  .hero h1{font-size:2.55rem}
+  .journey{flex-direction:column}
+}
+
